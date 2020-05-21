@@ -1,4 +1,13 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const rotate = keyframes`
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`;
 
 export const Header = styled.header`
   display: flex;
@@ -73,6 +82,16 @@ export const RepositoryInfo = styled.section`
         color: #6c6c80;
       }
     }
+  }
+`;
+
+export const Loading = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+
+  svg {
+    animation: ${rotate} 1.8s linear infinite;
   }
 `;
 
