@@ -1,5 +1,10 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { shade } from 'polished';
+
+const expandCard = keyframes`
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+`;
 
 export const Title = styled.h1`
   font-size: 48px;
@@ -56,6 +61,7 @@ export const Repositories = styled.div`
     display: flex;
     align-items: center;
     transition: transform 0.2s;
+    animation: ${expandCard} 0.8s;
 
     & + a {
       margin-top: 16px;
@@ -72,7 +78,8 @@ export const Repositories = styled.div`
     }
 
     div {
-      margin-left: 16px;
+      margin: 0 16px;
+      flex: 1;
 
       strong {
         font-size: 20px;
